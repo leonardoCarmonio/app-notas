@@ -1,0 +1,66 @@
+.modal {
+    width: 50%; 
+    background: #ccc; 
+    margin: 0 auto; 
+    border-radius: 10px; 
+    padding: 20px; 
+    transform: translate(-50%, -50%); 
+    position: absolute; 
+    left: 50%; top: 50%;
+}
+
+input,button {
+    padding: 8px; 
+    border-radius: 8px; 
+    outline: none; 
+    border: none;
+}
+
+button {
+    transition: all 300ms;
+}
+
+button:hover {
+    background: #aaa;
+}
+
+button.sucess {
+    background: #0a0;;
+    color:#fff
+}
+
+button.danger {
+    background:#f00;
+}
+
+input {
+    border: 1px solid #ccc
+}
+
+button {
+    cursor:pointer;
+}
+
+table {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+table tr td {
+    text-align: center;
+}
+
+.main {
+    padding:20px;
+}
+
+.load-button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.button-new-task-container {
+    margin-bottom: 20px;
+    text-align: right;
+}
