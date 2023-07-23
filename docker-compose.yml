@@ -34,5 +34,6 @@ services:
       - './database/startup-scripts:/docker-entrypoint-initdb.d/init-script.sql'
     networks:
       - net
+    restart: on-failure
 networks: 
   net:
