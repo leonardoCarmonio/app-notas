@@ -4,20 +4,18 @@ services:
     container_name: container-frontend-notas
     build: ./front-end
     ports:
-      - 3000:3000
+      - '3000:3000'
     networks:
-      - frontend
-      - app
+      - net
     depends_on:
       - app
   app:
     container_name: container-app-notas
     build: ./back-end
     ports:
-      - 8081:8081
+      - '8081:8081'
     networks:
-      - app
-      - db
+      - net
     depends_on:
       - db
   db:
@@ -26,18 +24,14 @@ services:
     environment:
       MYSQL_DATABASE: AppNotas
       MYSQL_USER: user-app
-      MYSQL_ROOT_PASSWORD: "!uWzy&c00!s5"
-      MYSQL_PASSWORD: "!uWzy&c00!s5"
+      MYSQL_ROOT_PASSWORD: '!uWzy&c00!s5'
+      MYSQL_PASSWORD: '!uWzy&c00!s5'
     ports:
-      - 3306:3306
+      - '3306:3306'
     volumes:
-      - ./database/data:/var/lib/mysql
-      - ./database/startup-scripts:/docker-entrypoint-initdb.d/init-script.sql
+      - './database/data:/var/lib/mysql'
+      - './database/startup-scripts:/docker-entrypoint-initdb.d/init-script.sql'
     networks:
-      - db
-    restart: always
-    
-networks:
-  frontend:
-  app:
-  db:
+      - net
+networks: 
+  net:
